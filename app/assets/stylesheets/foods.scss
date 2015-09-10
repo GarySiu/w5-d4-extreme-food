@@ -10,3 +10,12 @@
 .food-pic {
   max-width: 20%;
 }
+
+.form-left, .form-right {
+display: inline-block;
+vertical-align: top;
+}
+
+.form-row {
+  padding-bottom: 10px;
+}

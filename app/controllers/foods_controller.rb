@@ -1,17 +1,18 @@
 class FoodsController < ApplicationController
-  skip_before_action :verify_authenticity_token
   def index
     @foods = Food.all.order('id DESC')
   end
 
   def new
+    @food = Food.new
   end
 
   def create
     # binding.pry
-    food = Food.new
-    food.update(name: params[:name], image_url: params[:image_url], text: params[:text])
-    food.save
+    # food = Food.new
+    # food.update(name: params[:name], image_url: params[:image_url], text: params[:text])
+    # food.save
+    Food.create(food_params)
     redirect_to '/foods'
   end
 
@@ -25,7 +26,7 @@ class FoodsController < ApplicationController
 
   def update
     food = Food.find(params[:id])
-    food.update(name: params[:name], image_url: params[:image_url], text: params[:text])
+    food.update(food_params)
     food.save
     redirect_to "/foods/#{params[:id]}"
   end
@@ -33,6 +34,12 @@ class FoodsController < ApplicationController
   def delete
     Food.destroy(params[:id])
     redirect_to '/foods'
+  end
+
+private
+
+  def food_params
+      params.require(:food).permit(:name, :image_url, :text)
   end
 
 end

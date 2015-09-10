@@ -1,6 +1,15 @@
-<form action="/foods" method="post">
+<!-- <form action="/foods" method="post">
   <div><label for="name">name:</label><input type="text" name="name" id="name"></div>
   <div><label for="image_url">image url:</label><input type="text" name="image_url" id="image_url"></div>
   <div><textarea name="text" id="text" cols="30" rows="10" placeholder="text goes here"></textarea></div>
   <div><input type="submit" value="submit"></div>
-</form>
+</form> -->
+<%= form_for @food do |f| %>
+  <div class="form-left"><div class="form-row"><%= f.label :name %>:</div>
+  <div class="form-row"><%= f.label :image_url %>:</div>
+  <div class="form-row"><%= f.label :text %>:</div></div>
+  <div class="form-right"><div class="form-row"><%= f.text_field :name %></div>
+  <div class="form-row"><%= f.text_field :image_url %></div>
+  <div class="form-row"><%= f.text_area :text, cols: 30, rows: 10%></div>
+  <div class="form-row"><%= f.submit "Create" %></div></div>
+<% end %>
