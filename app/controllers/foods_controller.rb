@@ -19,6 +19,17 @@ class FoodsController < ApplicationController
     @food = Food.find(params[:id])
   end
 
+  def edit
+    @food = Food.find(params[:id])
+  end
+
+  def update
+    food = Food.find(params[:id])
+    food.update(name: params[:name], image_url: params[:image_url], text: params[:text])
+    food.save
+    redirect_to "/foods/#{params[:id]}"
+  end
+
   def delete
     Food.destroy(params[:id])
     redirect_to '/foods'

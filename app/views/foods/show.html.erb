@@ -3,4 +3,5 @@
 <h2><%= @food.name %></h2>
 <img class="food-pic" src="<%= @food.image_url%>">
 <div class="food-text"><%= @food.text %></div>
-<%= link_to "Delete", @object_name, method: :delete %>
+<%= link_to "delete", @object_name, method: :delete %> 
+<a href="/foods/<%= @food.id%>/edit">edit</a>
