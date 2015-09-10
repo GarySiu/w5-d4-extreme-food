@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'foods/' => 'foods#index'
+  get 'foods/new' => 'foods#new'
+  post 'foods' => 'foods#create'
+  get 'foods/:id' => 'foods#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

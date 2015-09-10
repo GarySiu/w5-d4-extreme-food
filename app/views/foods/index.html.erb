@@ -1,0 +1,7 @@
+<h1>Extreme Foods!</h1>
+<p>A site devoted to more challenging foods</p>
+<% @foods.each do | food | %>
+<h2><a href="/foods/<%= food.id %>"><%= food.name %></a></h2>
+<img class="food-pic" src="<%= food.image_url%>">
+<div class="food-text"><%= food.text %></div>
+<% end %>
