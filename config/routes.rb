@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'foods/new' => 'foods#new'
   post 'foods' => 'foods#create'
   get 'foods/:id' => 'foods#show'
+  delete 'foods/:id' => 'foods#delete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

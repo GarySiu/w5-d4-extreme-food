@@ -1,7 +1,7 @@
 class FoodsController < ApplicationController
   skip_before_action :verify_authenticity_token
   def index
-    @foods = Food.all
+    @foods = Food.all.order('id DESC')
   end
 
   def new
@@ -17,6 +17,11 @@ class FoodsController < ApplicationController
 
   def show
     @food = Food.find(params[:id])
+  end
+
+  def delete
+    Food.destroy(params[:id])
+    redirect_to '/foods'
   end
 
 end
