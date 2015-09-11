@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root => 'foods#index'
+  root 'foods#index'
   get '/disclaimer' => 'static#disclaimer'
   get 'foods/' => 'foods#index'
   post 'foods' => 'foods#create'
