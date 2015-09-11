@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/' => 'foods#home'
+  get '/disclaimer' => 'static#disclaimer'
   get 'foods/' => 'foods#index'
   post 'foods' => 'foods#create'
   get 'foods/new', to: 'foods#new', as: :new_food

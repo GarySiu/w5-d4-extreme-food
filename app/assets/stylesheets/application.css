@@ -34,6 +34,10 @@ nav {
   padding-bottom: 20px;
 }
 
+footer {
+  text-align: center;
+}
+
 .container {
   width: 80%;
   margin: 0 auto;
