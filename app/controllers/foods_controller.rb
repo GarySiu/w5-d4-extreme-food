@@ -8,12 +8,10 @@ class FoodsController < ApplicationController
   end
 
   def create
-    # binding.pry
-    # food = Food.new
-    # food.update(name: params[:name], image_url: params[:image_url], text: params[:text])
-    # food.save
-    Food.create(food_params)
-    redirect_to '/foods'
+    food = Food.new
+    food.update(food_params)
+    food.save
+    redirect_to "/foods/#{food.id}"
   end
 
   def show
