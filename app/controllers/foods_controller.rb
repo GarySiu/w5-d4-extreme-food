@@ -38,7 +38,7 @@ class FoodsController < ApplicationController
 
   def destroy
     Food.destroy(params[:id])
-    redirect_to '/foods'
+    redirect_to root_path
   end
 
 private

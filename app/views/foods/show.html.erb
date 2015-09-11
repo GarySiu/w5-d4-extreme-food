@@ -3,5 +3,5 @@
 <h2><%= @food.name %></h2>
 <img class="food-pic" src="<%= @food.image_url%>">
 <div class="food-text"><%= @food.text %></div>
-<%= link_to "delete", @object_name, method: :delete %> 
-<a href="/foods/<%= @food.id%>/edit">edit</a>
+<%= link_to "delete", @food, method: :delete, data: { confirm: "Are you sure?" } %> 
+<%= link_to "edit", :edit_food %>
