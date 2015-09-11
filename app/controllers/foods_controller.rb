@@ -1,5 +1,5 @@
 class FoodsController < ApplicationController
-  
+
   def index
     @foods = Food.all.order('id DESC')
   end
@@ -11,8 +11,11 @@ class FoodsController < ApplicationController
   def create
     food = Food.new
     food.update(food_params)
-    food.save
-    redirect_to "/foods/#{food.id}"
+    if food.save
+      redirect_to food
+    else
+      render :new
+    end
   end
 
   def show
