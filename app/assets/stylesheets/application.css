@@ -13,6 +13,18 @@
  *= require_tree .
  *= require_self
  */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Bevan', cursive;
+}
+
+h1 {
+  font-size: 50px;
+}
+
 nav ul, nav ul li {
   display: inline;
   padding: 5px;
@@ -25,4 +37,5 @@ nav {
 .container {
   width: 80%;
   margin: 0 auto;
+  padding: 0 5px;
 }
