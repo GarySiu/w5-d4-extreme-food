@@ -1,7 +1,5 @@
 class FoodsController < ApplicationController
-  def home
-    redirect_to '/foods'
-  end
+  
   def index
     @foods = Food.all.order('id DESC')
   end
