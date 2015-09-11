@@ -28,8 +28,11 @@ class FoodsController < ApplicationController
 
   def update
     food = Food.find(params[:id])
-    food.update(food_params)
-    food.save
+    if(food.update(food_params))
+      redirect_to article
+    else
+      render:edit
+    end
     redirect_to "/foods/#{params[:id]}"
   end
 
